@@ -1,15 +1,22 @@
 import React, {Component} from "react"
-import {StyleSheet, View, Text } from "react-native"
-
+import {StyleSheet, View, Text,TouchableWithoutFeedback } from "react-native"
+import { Icon } from "react-native-vector-icons/FontAwesome6"
 import moment from "moment"
 import 'moment/locale/pt-br'
 
 export default props =>{
     return(
       <View style={StyleSheet.container}>
-        <Text>Descrição da tarefas</Text>
-        <Text>Data estimada conclusão</Text>
-        <Text>Data conclusão</Text>
+      <TouchableWithoutFeedback>
+      <View>
+         <Icon name="check" size={20}></Icon>
+      </View>
+      </TouchableWithoutFeedback>
+      <View>
+        <Text style={styles.desc}>{props.description}Descrição da tarefas</Text>
+        <Text style={styles.date}>{props.estimate_at}Data estimada conclusão</Text>
+        <Text style={styles.date}>{props.done_at}Data conclusão</Text>
+      </View>
       </View>
     )
 }
@@ -27,6 +34,19 @@ const styles = StyleSheet.create({
      },
      date:{
         fontFamily: 'Arial'
-     }
-
+     },
+     checkContainer:{
+        width: "20%",
+        alignContent: "center",
+        justifyContent: "center"
+     },
+     done:{
+      height: 25,
+      width: 25,
+      borderRadius:13,
+      borderWidth: 1,
+      backgroundColor: "#4D7031",
+      alignItems: "center",
+      justifyContent: "center"
+ }
 })

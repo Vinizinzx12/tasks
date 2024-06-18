@@ -20,8 +20,21 @@ export default class TaskList extends Component{
                     </View>
                 </ImageBackground>
                 <View style={styles.taskList}>
-                    <Task/>
-                    {/* asoiuDFDSHFUDSHFHSF */}
+                    <Task
+                        description-="Estudar para prova de História"
+                        estimate_at={new Date()}
+                        done_at={null}
+                    />
+                    <Task
+                        description-="Fazer a prova de História"
+                        estimate_at={new Date()}
+                        done_at={null}
+                    />
+                    <Task
+                        description-="Chorar após a prova de História"
+                        estimate_at={new Date()}
+                        done_at={null}
+                    />
                 </View>
             </View>
         )
